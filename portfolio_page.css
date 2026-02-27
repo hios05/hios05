@@ -1,8 +1,7 @@
-/*메인 페이지*/
+/*배경 레이아웃*/
 
 body {
   font-family: "Abril Fatface", serif;
-  color: #709ad0;
   min-height: 300vh; /* 스크롤이 생기도록 페이지 높이를 강제로 늘림 */
 }
 
@@ -32,12 +31,24 @@ body {
 
 .background3 {
   top: 500px;
+  height: 500px;
+  background-color: #303030;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background4 {
+  top: 1000px;
   height: 150vh;
   background-color: #709ad0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+/*상단바*/
 
 header {
   position: fixed;
@@ -50,6 +61,7 @@ header {
   flex-direction: column;
   align-items: center;
   padding-bottom: 10px;
+  color: #709ad0;
 }
 
 .title {
@@ -79,11 +91,11 @@ header {
   margin: 20px;
   text-decoration: none;
   color: #709ad0;
-  font-size: 1.2rem;
 }
 
+/*메인 페이지*/
+
 .img1 {
-  /* 고정된 헤더와 콘텐츠가 겹치지 않도록 상단 여백을 확보하고, 박스를 중앙 정렬합니다. */
   margin: 180px auto 20px;
   width: 90%;
   height: 400px;
@@ -92,7 +104,7 @@ header {
 
 .fixed {
   display: flex;
-  position: absolute; /* 스크롤 시 글자가 위로 올라가도록 변경 */
+  position: absolute;
   font-size: clamp(5rem, 10vw, 15rem);
 }
 
@@ -105,20 +117,49 @@ header {
 .txtfix2 {
   bottom: clamp(50px, 2vw, 100px);
   right: 5vw;
+  color: #709ad0;
 }
 
-/*ABOUT ME*/
+/*ABOUT ME - 타이틀*/
+
+main {
+  font-family: sans-serif;
+}
 
 .txt1 {
   color: white;
   font-size: clamp(3rem, 5vw, 5rem);
+  font-family: "Abril Fatface", serif;
 }
 
 .subtxt1 {
   color: white;
   font-size: 1.1rem;
-  font-family: sans-serif;
 }
+
+/*ABOUT ME - 성과 픽토그램*/
+
+.subtxt2 {
+  margin-top: 10px;
+  color: white;
+}
+
+.icon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3개의 아이템을 가로로 나열 */
+  gap: 50px; /* 아이템 사이의 간격 */
+  width: 450px; /* 3개의 아이콘이 들어갈 수 있는 너비 */
+  margin-top: 20px;
+}
+
+/* 아이콘 개별 스타일 (임시) */
+.icon > div {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
+
+/*ABOUT ME - 프로필 상세*/
 
 .profile {
   margin-top: 100px;
@@ -129,11 +170,37 @@ header {
   border-radius: 50%;
 }
 
-.name1 {
+.name {
   display: flex;
   color: white;
   margin-top: 20px;
   font-size: 1.5rem;
+  font-weight: bold;
+}
+.summary {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-weight: 500;
+}
+.tag {
+  margin-right: 20px;
+  color: white;
+}
+
+.sharp {
+  color: #bae4ff;
+  font-weight: bolder;
+}
+
+.txtbox {
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 15px 15px 0px rgba(41, 36, 97, 0.637);
 }
 
 @media (min-width: 1000px) {
@@ -154,7 +221,7 @@ header {
   }
   .title .item {
     gap: 20px;
-    font-size: 1.5rem;
+
     margin: 30px;
     padding: 10px;
   }
