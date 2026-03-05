@@ -2,7 +2,6 @@
 
 body {
   font-family: "Abril Fatface", serif;
-  min-height: 300vh; /* 스크롤이 생기도록 페이지 높이를 강제로 늘림 */
 }
 
 .bg {
@@ -69,6 +68,19 @@ body {
   position: relative;
   height: 100vh;
   background-image: url(./source/paper-texture-background.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.background9 {
+  height: auto;
+  background-color: #303030;
+  padding-top: 50px;
+  padding-bottom: 120px;
+  color: white;
 }
 
 /*상단바*/
@@ -160,7 +172,8 @@ main {
 
 .subtxt1 {
   color: white;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
+  font-weight: 200;
 }
 
 /*ABOUT ME - 성과 픽토그램*/
@@ -285,7 +298,7 @@ main {
 
 .slogan {
   font-size: 1.3rem;
-  color: rgba(41, 36, 97, 0.637);
+  color: #455b8b;
   font-weight: bolder;
 }
 
@@ -423,6 +436,85 @@ main {
   box-shadow: 2px 2px 5px #7a7a7a;
 }
 
+.background7 .head1 {
+  text-decoration: none;
+  color: #709ad0;
+  font-weight: bold;
+  grid-column: 1 / -1;
+  margin: 30px auto;
+}
+
+/*CONTACT*/
+
+.background8 .engtxt {
+  color: #455b8b;
+  margin-top: 0;
+}
+
+.background8 .name {
+  color: #455b8b;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  color: #455b8b;
+  font-size: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.contact-item::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.final-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.final-profile {
+  width: 300px;
+  height: 400px;
+  background-color: #b0c4de; /* 프로필 사진이 들어갈 공간 (임시 색상) */
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.final-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*credit*/
+.background9 .head1 {
+  color: white;
+  font-weight: 400;
+  font-family: "Abril Fatface", serif;
+  border-color: white;
+}
+
 @media (min-width: 1000px) {
   header {
     flex-direction: row;
@@ -503,6 +595,18 @@ main {
   .sketch-workgroup {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .final-content {
+    flex-direction: row; /* 가로 배치 */
+    gap: 80px;
+  }
+  .final-text,
+  .contact-info {
+    align-items: flex-start; /* 텍스트 왼쪽 정렬 */
+  }
+  .contact-item {
+    justify-content: flex-start;
+  }
 }
 
 /* 각 스킬별 아이콘 이미지 설정 (url 경로에 이미지 파일을 넣어주세요) */
@@ -559,4 +663,16 @@ main {
 }
 .skill.slack::before {
   background-image: url(./source/slavk.jpg);
+}
+
+.contact-item.tel::before {
+  background-image: url(./source/free-icon-email-6129053.png); /* 전화 아이콘 경로를 넣어주세요 */
+}
+
+.contact-item.mail::before {
+  background-image: url(./source/free-icon-phone-call-455705.png); /* 메일 아이콘 */
+}
+
+.contact-item.sns::before {
+  background-image: url(./source/free-icon-instagram-3670274.png); /* 인스타그램 아이콘 경로를 넣어주세요 */
 }
