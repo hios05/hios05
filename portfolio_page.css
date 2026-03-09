@@ -2,6 +2,7 @@
 
 body {
   font-family: "Abril Fatface", serif;
+  margin: 0;
 }
 
 .bg {
@@ -60,19 +61,20 @@ body {
 .background7 {
   background-color: white;
   padding-top: 50px;
-  padding-bottom: 100px;
   color: #303030;
 }
 
 .background8 {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-image: url(./source/paper-texture-background.jpg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .background9 {
@@ -81,6 +83,10 @@ body {
   padding-top: 50px;
   padding-bottom: 120px;
   color: white;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /*상단바*/
@@ -134,7 +140,9 @@ header {
   margin: 180px auto 20px;
   width: 90%;
   height: 400px;
-  background-color: gray;
+  background-image: url(./source/Untitled-1@2x.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .fixed {
@@ -155,11 +163,17 @@ header {
   color: #709ad0;
 }
 
+.intro-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 /*ABOUT ME - 타이틀*/
 
 main {
-  position: absolute;
-  top: 100vh;
+  position: relative;
   width: 100%;
   font-family: sans-serif;
 }
@@ -243,7 +257,9 @@ main {
 .profile {
   margin-top: 100px;
   display: grid;
-  background-color: white;
+  background-image: url(./source/profile.jpg);
+  background-size: cover;
+  background-position: center;
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -396,6 +412,19 @@ main {
   border-radius: 20px;
   text-decoration: none;
   box-shadow: 2px 2px 5px #7a7a7a;
+  position: relative; /* 가상 요소 위치 기준점 */
+  overflow: hidden; /* 둥근 모서리 밖으로 그라디언트가 나가지 않게 자름 */
+}
+
+/* 이미지 위 텍스트 가독성을 위한 그라디언트 오버레이 */
+.team-workbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
 }
 
 .txt5 {
@@ -421,6 +450,26 @@ main {
   height: 250px;
   border-radius: 20px;
   text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-workbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+}
+
+.personal-txt {
+  font-size: bold;
+}
+
+.personal-subtxt {
+  font-size: 0.8rem;
 }
 
 .sketch-workgroup {
@@ -494,7 +543,7 @@ main {
 .final-profile {
   width: 300px;
   height: 400px;
-  background-color: #b0c4de; /* 프로필 사진이 들어갈 공간 (임시 색상) */
+  background-image: url(./source/profile.jpg);
   border-radius: 20px;
   background-size: cover;
   background-position: center;
