@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  color: #709ad0;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+.head1 {
+  display: flex;
+  margin: 10px 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #709ad0;
+  border-radius: 30px;
+  font-family: "Abril Fatface", serif;
+}
+
+.bg {
+  position: absolute; /* 스크롤과 상관없이 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 스크롤바 포함 너비 문제 해결 */
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 5vw;
+  box-sizing: border-box;
+}
+
+.background9 {
+  height: auto;
+  background-color: #303030;
+  padding-top: 50px;
+  padding-bottom: 120px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/*배경 끝나는 부분*/
+
+.engtxt {
+  color: #709ad0;
+  font-size: 0.8rem;
+  margin-top: 30px;
+}
+
+.txt1 {
+  color: white;
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: bolder;
+}
+
+.subtxt1 {
+  color: white;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+}
+
+.txt3 {
+  color: #709ad0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.subtxt3 {
+  color: lightslategray;
+  font-size: 0.9rem;
+}
+
+.txtbox {
+  padding: 50px 5vw;
+  box-sizing: border-box;
+}
+
+/*크레딧*/
+.background9 .head1 {
+  color: white;
+  font-weight: 400;
+  font-family: "Abril Fatface", serif;
+  border-color: white;
+}
+
+.background9 .subtxt1 {
+  font-size: 0.7rem;
+}
+
+@media (min-width: 1000px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0;
+  }
+
+  .title {
+    justify-content: end;
+    width: auto;
+  }
+
+  .head1 {
+    margin-left: 30px;
+  }
+}

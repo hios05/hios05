@@ -479,10 +479,12 @@ main {
 .sketch-box {
   background-color: lightslategray;
   width: 400px;
-  height: 250px;
+  height: 280px;
   border-radius: 20px;
   text-decoration: none;
   box-shadow: 2px 2px 5px #7a7a7a;
+  background-size: cover;
+  background-position: center;
 }
 
 .background7 .head1 {
