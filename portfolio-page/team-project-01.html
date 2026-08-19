@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>team-project-01</title>
+    <link rel="stylesheet" href="work-page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playwrite+GB+J+Guides:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+
+     <header>
+      <div class="head1">HIOS05 PORTFOLIO</div>
+      <div class="title">
+      </div>
+    </header>
+    <div>
+      <div
+        class="bg bg1 background2"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./source/10.jpg); height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;"
+      >
+      <div class="subtxt1">
+          브랜드 협업형 기능성 정수기 디자인
+        </div>
+        <div class="txt1">스마트 차 정수기</div>
+        
+      </div>
+  
+
+<main>
+  <div class="txtbox">
+    <div class="engtxt">KEYWORD</div>
+    <div class="txt3">키워드 요약</div>
+    <div class="subtxt3">#웰니스 #한국적 #맞춤형</div>
+    <br />
+    <div class="engtxt">KEY FEATURES</div>
+    <div class="txt3">주요 기능</div>
+    <div class="subtxt3">사용자 맞춤형 차 추출 기능을 제공하는 스마트 차 정수기</div>
+    <br />
+    <div class="engtxt">DETAILS</div>
+    <div class="txt3">상세</div>
+    <li class="subtxt3"> 다이어트, 숙면, 면역 강화 등 상황과 목적에 맞는 맞춤형 추출 모드 제공
+</li>
+    <li class="subtxt3">한국적 미를 원형과 직선의 절제된 조합으로 표현한 조형적 디자인</li>
+    <li class="subtxt3">주방이 아닌 방 안에 배치 가능한 선반-가구형 형태를 채택
+</li>
+<br>
+ <div class="subtxt3">팀원 - 강서현 / 고예진 / 기은정 / 전지수 / 홍서윤</div>
+
+    <br />
+    <div class="engtxt">DESIGN TOOLS</div>
+    <div class="txt3">디자인 툴</div>
+    <div class="subtxt3">
+      <li>Adobe Illustrator</li>
+      <li>Canva</li>
+      <br>
+       <li>Rhino 7</li>
+       <li>Keyshot 11</li>
+    </div>
+    <br />
+    <div class="engtxt">GALLERY</div>
+    <div class="txt3">이미지 더보기</div>
+    <div class="gallery-grid">
+      <div class="gallery-item" style="background-image: url(./source/team1-1.jpg);"></div>
+      <div class="gallery-item" style="background-image: url(./source/team1-3.jpg);"></div>
+      <div class="gallery-item" style="background-image: url(./source/team1-4.jpg);"></div>
+        <div class="gallery-item" style="background-image: url(./source/10.jpg);"></div>
+    </div>
+    <br />
+    <div class="engtxt">DOCUMENT</div>
+    <div class="txt3">기획서 주소</div>
+    <a href="https://www.canva.com/design/DAGzGW6hnBg/pg9OAdb6O1zgCETEeYOa3w/edit?utm_content=DAGzGW6hnBg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="subtxt3">바로가기</a>
+  </div>
+</main>
+
+
+<footer>
+   <div class="bg1 background9" style="text-align: center;">
+   <div class="head1">HIOS05 PORTFOLIO</div>
+   <br>
+ 
+   <div class="subtxt1">홍서윤 @hios05 포트폴리오 사이트 ㅤㅤ마지막 수정 : 2026 ㅤㅤMail : yunibus02@gmail.com</div>
+<br>
+   <div class="subtxt1">Copyrights © 2026 by 홍서윤/@hios05.  All Rights Reserved.ㅤㅤ@Designed by Figma</div>
+  </div>
+</footer>
+
+<!-- 뒤로가기 버튼 -->
+<a href="index.html" class="back-btn">BACK</a>
+
+
+
+
+<!-- 이미지 확대 모달 창 -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+  // 모달 요소 가져오기
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.getElementsByClassName("close")[0];
+
+  // 모든 갤러리 아이템에 클릭 이벤트 추가
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  
+  galleryItems.forEach(item => {
+    item.addEventListener("click", function() {
+      // 클릭한 div의 배경 이미지 URL 가져오기
+      const style = window.getComputedStyle(this);
+      const bgImage = style.backgroundImage;
+      
+      // url("...") 형태에서 주소만 추출 (이미지가 있을 때만 실행)
+      if (bgImage !== 'none') {
+        const url = bgImage.slice(5, -2).replace(/['"]/g, ""); // url(" 제거, ") 제거, 따옴표 제거
+        modal.style.display = "flex"; // 모달 보이기
+        modalImg.src = url; // 이미지 주소 설정
+      }
+    });
+  });
+
+  // 닫기 버튼(x) 클릭 시 모달 닫기
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // 모달 배경 클릭 시 닫기
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // 스크롤 애니메이션 (Intersection Observer)
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        scrollObserver.unobserve(entry.target); // 한 번만 실행
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const animateTargets = document.querySelectorAll(".engtxt, .txt3, .subtxt3, .gallery-grid");
+  animateTargets.forEach(el => {
+    el.classList.add("scroll-animate");
+    scrollObserver.observe(el);
+  });
+</script>
+
+  </body>
+</html>

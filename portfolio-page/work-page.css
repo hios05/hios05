@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  color: #709ad0;
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  font-weight: 400;
+}
+
+.head1 {
+  display: flex;
+  margin: 10px 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #709ad0;
+  border-radius: 30px;
+  font-family: "Abril Fatface", serif;
+}
+
+.bg {
+  position: absolute; /* 스크롤과 상관없이 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 스크롤바 포함 너비 문제 해결 */
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 5vw;
+  box-sizing: border-box;
+}
+
+.background9 {
+  height: auto;
+  background-color: #303030;
+  padding-top: 50px;
+  padding-bottom: 120px;
+  color: white;
+  z-index: 1;
+  width: 100%;
+}
+
+/*배경 끝나는 부분*/
+
+.engtxt {
+  color: #709ad0;
+  font-size: 0.8rem;
+  margin-top: 30px;
+}
+
+.txt1 {
+  color: white;
+  font-size: clamp(3rem, 4vw, 4rem);
+  font-weight: bolder;
+}
+
+.subtxt1 {
+  color: white;
+  font-size: 1.1rem;
+  font-family: sans-serif;
+}
+
+.txt3 {
+  color: #709ad0;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.subtxt3 {
+  color: lightslategray;
+}
+
+.txtbox {
+  padding: 50px 10vw;
+  box-sizing: border-box;
+}
+
+/*크레딧*/
+.background9 .head1 {
+  color: white;
+  font-weight: 400;
+  border-color: white;
+  margin: 10px auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.background9 .subtxt1 {
+  font-size: 0.7rem;
+}
+
+@media (min-width: 1000px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0;
+  }
+
+  .title {
+    justify-content: end;
+    width: auto;
+  }
+
+  .head1 {
+    margin-left: 30px;
+  }
+}
+
+/* 모달(이미지 확대) 스타일 */
+.modal {
+  display: none; /* 평소에는 숨김 */
+  position: fixed;
+  z-index: 1000; /* 맨 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* 검은색 반투명 배경 */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #bbb;
+}
+
+/* 뒤로가기 버튼 스타일 */
+.back-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #303030;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 900;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #709ad0;
+  transform: translateY(-5px);
+}
+
+/* 스크롤 애니메이션 스타일 */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
